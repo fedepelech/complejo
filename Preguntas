@@ -1,0 +1,48 @@
+Pregunta N°1) ORM - Enzo
+Afecta en ClienteService, DepartamentoService, ReservaService.
+Metodos Get Cliente, Departamento y Reserva. 
+////////////////////////////////////////////////////////////////////////////////
+-Get de Cliente no muestra sus reservas
+-Get de Departamento no muestra sus reservas
+-En el metodo crear reserva asigna automaticamente el departamento, pero no el cliente
+    {
+        1-Creo reserva ( reserva uno )
+        2-Se guarda la reserva uno
+        3-Me devuelve la reserva uno (la que cree) asigna automaticamente el departamento, pero no el 
+        cliente
+        // Lo enviado por postman
+                {
+                "FechaInicio": "2019-10-21",
+                "FechaFin": "2019-10-21",
+                "DepartamentoId": 4,
+                "ClienteId": 3,
+                "Seña": 500,
+                "Total":20400,
+                "Deposito":1500,
+                "DescuentoDepo":1200,
+                "Justificacion":"hola"
+                }
+        // Lo que devuelve
+                {
+                "hsInicio": 14,
+                "hsFin": 10,
+                "id": 11,
+                "fechaInicio": "2019-10-21T00:00:00",
+                "fechaFin": "2019-10-21T00:00:00",
+                "departamentoId": 4,
+                "clienteId": 3,
+                "seña": 500,
+                "total": 20400,
+                "deposito": 1500,
+                "descuentoDepo": 1200,
+                "justificacion": "hola",
+                "departamento": {
+                    "id": 4,
+                    "numero": 4,
+                    "piso": 1,
+                    "reservas": []
+                },
+                "cliente": null
+                }
+    }
+//////////////////////////////////////////////////////////////////////////////////
